@@ -248,5 +248,5 @@ def zero_sloppy_params(fim, sloppy_rows, model):
             model.encoder[torch_layer_index].weight.data[layer_rel_param // layer_shape[1], layer_rel_param % layer_shape[1]] = 0
 
     print(f'Removed {len(sloppy_rows)} params')
-    return model
+    return model, len(sloppy_rows)
 
