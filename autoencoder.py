@@ -11,6 +11,7 @@ class Autoencoder(nn.Module):
     def __init__(self, input_size, latent_size):
         super(Autoencoder, self).__init__()
         self.encoder = nn.Sequential(
+            nn.ReLU(),
             nn.Linear(in_features=input_size, out_features=latent_size),
             nn.ReLU(),
         )
@@ -95,7 +96,6 @@ class MNISTModel():
 
         print()
         print('Completed training successfully...')
-
 
     # Save the trained model
     # torch.save(autoencoder.state_dict(), 'autoencoder.pth')
