@@ -21,7 +21,7 @@ def extract_blocks(A):
     non-zero elements in a contiguous diagonal pattern.
 
     Args:
-        A (numpy.ndarray): A symmetric matrix as a 2D numpy array.
+        A (numpy.ndarray): A symmetric matrix as a 2D NumPy array.
 
     Returns:
         list: A list containing diagonal blocks extracted from the matrix `A`.
@@ -114,15 +114,15 @@ def _find_layers(sloppy_rows, cum_param_count):
     the values in `sloppy_rows`.
 
     Args:
-        sloppy_rows (numpy.ndarray): A 1D numpy array containing values to
+        sloppy_rows (numpy.ndarray): A 1D NumPy array containing values to
         search for (diagonal parameters of FIM which are weak).
 
-        cum_param_count (numpy.ndarray): A 1D numpy array of cumulative
+        cum_param_count (numpy.ndarray): A 1D NumPy array of cumulative
         parameter counts. It represents the cumulative sum of parameters in 
         each layer.
 
     Returns:
-        numpy.ndarray: A 1D numpy array of indices corresponding to layers in
+        numpy.ndarray: A 1D NumPy array of indices corresponding to layers in
         `cum_param_count` where the largest elements smaller than or equal to
         the values in `sloppy_rows` are located. If no such element is found,
         the index will be set to 0.
@@ -153,7 +153,7 @@ def get_sloppy_rows(fim, model, cutoff, diag=True, encoder_param_end=15680):
                                  wish to prune decoder).
 
     Returns:
-        numpy.ndarray: A 1D numpy array containing row indices of the 'sloppy'
+        numpy.ndarray: A 1D NumPy array containing row indices of the 'sloppy'
         parameters based on diagonal elements in the FIM that are below or equal
         to the cutoff.
     '''
@@ -199,9 +199,9 @@ def zero_sloppy_params(fim, sloppy_rows, model):
 
     Args:
         fim (numpy.ndarray): The Fisher Information Matrix (FIM) as a square
-        numpy array (given by NNGeometry)
+        NumPy array (given by NNGeometry)
 
-        sloppy_rows (numpy.ndarray): A 1D numpy array containing values
+        sloppy_rows (numpy.ndarray): A 1D NumPy array containing values
         corresponding to the 'sloppy' parameter rows to be zeroed out in the
         model params.
 
