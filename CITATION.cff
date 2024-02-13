@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite the origin paper (arXiv: hep-th/2305.10491)"
+message: "If you use this software, please also cite the origin paper (arXiv: hep-th/2305.10491)"
 authors:
 - family-names: "Berman"
   given-names: "David S."
